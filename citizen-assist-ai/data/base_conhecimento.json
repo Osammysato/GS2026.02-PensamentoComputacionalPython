@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "categoria": "Saúde",
+    "titulo": "Fazer o Cartão Nacional de Saúde (Cartão SUS)",
+    "palavras_chave": ["cartao sus", "cartao do sus", "sus", "cns", "cartao nacional de saude"],
+    "resposta": "O Cartão SUS pode ser feito gratuitamente em qualquer UBS (posto de saúde) ou pelo aplicativo Meu SUS Digital. Não é preciso agendar.",
+    "documentos": ["Documento com foto", "CPF", "Comprovante de residência"],
+    "onde": "Qualquer UBS do município ou aplicativo Meu SUS Digital",
+    "fonte": "https://www.gov.br/saude",
+    "verificado_em": "2026-11-06"
+  },
+  {
+    "id": 2,
+    "categoria": "Benefícios",
+    "titulo": "Solicitar o BPC/LOAS para idosos de 65 anos ou mais",
+    "palavras_chave": ["bpc", "loas", "beneficio de prestacao continuada", "um salario idoso", "beneficio idoso"],
+    "resposta": "O BPC é um salário mínimo mensal para idosos a partir de 65 anos com renda familiar baixa. O pedido é feito pelo aplicativo ou site Meu INSS, ou pelo telefone 135.",
+    "documentos": ["CPF", "Documento com foto", "Cadastro Único (CadÚnico) atualizado"],
+    "onde": "Aplicativo Meu INSS, site meu.inss.gov.br ou telefone 135",
+    "fonte": "https://www.gov.br/inss",
+    "verificado_em": "2026-11-06"
+  }
+]
