@@ -2,23 +2,220 @@
   {
     "id": 1,
     "categoria": "Saúde",
-    "titulo": "Fazer o Cartão Nacional de Saúde (Cartão SUS)",
-    "palavras_chave": ["cartao sus", "cartao do sus", "sus", "cns", "cartao nacional de saude"],
-    "resposta": "O Cartão SUS pode ser feito gratuitamente em qualquer UBS (posto de saúde) ou pelo aplicativo Meu SUS Digital. Não é preciso agendar.",
-    "documentos": ["Documento com foto", "CPF", "Comprovante de residência"],
-    "onde": "Qualquer UBS do município ou aplicativo Meu SUS Digital",
-    "fonte": "https://www.gov.br/saude",
-    "verificado_em": "2026-11-06"
+    "titulo": "Fazer ou consultar o Cartão SUS (Cartão Nacional de Saúde)",
+    "palavras_chave": [
+      "cartao sus",
+      "cartao do sus",
+      "sus",
+      "cartao nacional de saude",
+      "cns",
+      "carteirinha do sus"
+    ],
+    "resposta": "O Cartão SUS agora usa o seu CPF como número principal. Se você já tem cadastro, pode ver o cartão no aplicativo ou no site Meu SUS Digital, entrando com a conta gov.br. Para fazer o primeiro cadastro ou atualizar seus dados, vá a uma UBS (posto de saúde). Quem não tem CPF continua sendo atendido no SUS.",
+    "documentos": [
+      "Documento com foto",
+      "CPF",
+      "Comprovante de residência"
+    ],
+    "onde": "UBS (posto de saúde) perto de casa ou aplicativo Meu SUS Digital",
+    "fonte": "https://www.gov.br/saude/pt-br/assuntos/noticias/2025/setembro/ministerio-da-saude-comeca-a-emitir-cartao-sus-com-base-no-cpf",
+    "verificado_em": "2026-11-07"
   },
+
   {
     "id": 2,
     "categoria": "Benefícios",
-    "titulo": "Solicitar o BPC/LOAS para idosos de 65 anos ou mais",
-    "palavras_chave": ["bpc", "loas", "beneficio de prestacao continuada", "um salario idoso", "beneficio idoso"],
-    "resposta": "O BPC é um salário mínimo mensal para idosos a partir de 65 anos com renda familiar baixa. O pedido é feito pelo aplicativo ou site Meu INSS, ou pelo telefone 135.",
-    "documentos": ["CPF", "Documento com foto", "Cadastro Único (CadÚnico) atualizado"],
-    "onde": "Aplicativo Meu INSS, site meu.inss.gov.br ou telefone 135",
-    "fonte": "https://www.gov.br/inss",
-    "verificado_em": "2026-11-06"
+    "titulo": "Pedir o BPC/LOAS, o benefício de um salário mínimo para idoso de baixa renda",
+    "palavras_chave": [
+      "bpc",
+      "loas",
+      "beneficio de prestacao continuada",
+      "beneficio assistencial",
+      "salario minimo idoso",
+      "nunca contribui"
+    ],
+    "resposta": "O BPC paga um salário mínimo por mês para quem tem 65 anos ou mais e renda familiar de até 1/4 do salário mínimo por pessoa. Não é preciso ter contribuído para o INSS. Antes de pedir, a família precisa estar no CadÚnico, com o cadastro atualizado nos últimos 2 anos. O pedido é feito pelo Meu INSS (aplicativo ou site) ou pelo telefone 135. O BPC não paga 13º salário e não deixa pensão por morte.",
+    "documentos": [
+      "Documento com foto (RG, CIN, CNH ou carteira de trabalho) de cada pessoa da casa",
+      "CPF de cada pessoa da casa",
+      "Cadastro no CadÚnico atualizado"
+    ],
+    "onde": "Aplicativo ou site Meu INSS, ou telefone 135",
+    "fonte": "https://www.gov.br/pt-br/servicos/solicitar-beneficio-assistencial-ao-idoso",
+    "verificado_em": "2026-11-07"
+  },
+
+  {
+    "id": 3,
+    "categoria": "Benefícios",
+    "titulo": "Fazer a prova de vida do INSS (aposentados e pensionistas)",
+    "palavras_chave": [
+      "prova de vida",
+      "comprovar que estou vivo",
+      "recadastramento do inss",
+      "bloqueado",
+      "biometria do inss"
+    ],
+    "resposta": "Na maioria dos casos o INSS faz a prova de vida sozinho, cruzando dados, por exemplo quando você vota, toma vacina ou renova um documento. Se o INSS não conseguir confirmar, você recebe um aviso pelo Meu INSS, pelo 135 ou pelo banco e tem 60 dias para resolver. Dá para fazer pelo aplicativo Meu INSS, no banco onde recebe o benefício ou em uma agência do INSS. Para saber se está tudo certo, consulte o Meu INSS ou ligue 135.",
+    "documentos": [
+      "Documento com foto",
+      "Conta gov.br nível ouro (para fazer pelo aplicativo)"
+    ],
+    "onde": "Aplicativo Meu INSS, banco onde recebe o benefício ou agência do INSS; dúvidas pelo telefone 135",
+    "fonte": "https://www.gov.br/inss/pt-br/noticias/prova-de-vida/FAQProvadeVida.pdf",
+    "verificado_em": "2026-11-07"
+  },
+
+  {
+    "id": 4,
+    "categoria": "Benefícios",
+    "titulo": "Fazer a inscrição no Cadastro Único (CadÚnico)",
+    "palavras_chave": [
+      "cadunico",
+      "cadastro unico",
+      "cad unico",
+      "nis",
+      "cadastro do cras",
+      "programas sociais"
+    ],
+    "resposta": "O CadÚnico é o cadastro do governo para famílias de baixa renda e é o primeiro passo para vários programas sociais, como o BPC e a Carteira da Pessoa Idosa. Podem se cadastrar famílias com renda de até meio salário mínimo por pessoa. A inscrição é gratuita e feita pessoalmente, no posto de cadastro da sua cidade. Para saber onde fica, pergunte no CRAS.",
+    "documentos": [
+      "CPF ou título de eleitor do responsável pela família",
+      "Documento com foto do responsável pela família",
+      "Comprovante de residência (ou declaração de residência)",
+      "Um documento de cada pessoa da casa, de preferência o CPF"
+    ],
+    "onde": "Posto de cadastro do CadÚnico da sua cidade (informações no CRAS); dúvidas pelo Disque Social 121",
+    "fonte": "https://www.gov.br/pt-br/servicos/inscrever-se-no-cadastro-unico-para-programas-sociais-do-governo-federal",
+    "verificado_em": "2026-11-07"
+  },
+
+  {
+    "id": 5,
+    "categoria": "Saúde",
+    "titulo": "Retirar remédio de graça pela Farmácia Popular",
+    "palavras_chave": [
+      "farmacia popular",
+      "remedio de graca",
+      "remedio gratis",
+      "medicamento gratuito",
+      "aqui tem farmacia popular",
+      "fralda geriatrica"
+    ],
+    "resposta": "O Programa Farmácia Popular entrega de graça remédios para pressão alta (hipertensão), diabetes, asma, osteoporose, colesterol alto, rinite, Parkinson, glaucoma e outros, além de fralda geriátrica. Vá a uma farmácia com o selo Aqui Tem Farmácia Popular levando os documentos e a receita. Os remédios também podem ser retirados na UBS e nas farmácias municipais. Se você não puder ir, outra pessoa pode retirar com procuração.",
+    "documentos": [
+      "Documento oficial com foto e CPF",
+      "Receita médica dentro da validade (do SUS ou particular)"
+    ],
+    "onde": "Farmácias com o selo Aqui Tem Farmácia Popular, UBS ou farmácia municipal",
+    "fonte": "https://www.gov.br/saude/pt-br/assuntos/farmaciapopular",
+    "verificado_em": "2026-11-07"
+  },
+  {
+    "id": 6,
+    "categoria": "Saúde",
+    "titulo": "Tomar a vacina da gripe (influenza) pelo SUS",
+    "palavras_chave": [
+      "vacina da gripe",
+      "vacina gripe",
+      "vacina contra gripe",
+      "influenza",
+      "vacinacao idoso"
+    ],
+    "resposta": "A vacina da gripe é gratuita nas UBS e faz parte do Calendário Nacional de Vacinação para pessoas com 60 anos ou mais. A dose é tomada uma vez por ano, porque o vírus muda. A campanha nacional começa no fim de março nas regiões Sul, Sudeste, Centro-Oeste e Nordeste, e no segundo semestre na região Norte.",
+    "documentos": [
+      "Documento com foto",
+      "Caderneta de vacinação, se tiver"
+    ],
+    "onde": "Qualquer UBS (posto de saúde)",
+    "fonte": "https://www.gov.br/saude/pt-br/assuntos/noticias/2026/marco/dia-d-campanha-nacional-de-vacinacao-contra-a-influenza-comeca-neste-sabado-28",
+    "verificado_em": "2026-11-07"
+  },
+
+  {
+    "id": 7,
+    "categoria": "Transporte",
+    "titulo": "Emitir a Carteira da Pessoa Idosa para viajar de graça entre estados",
+    "palavras_chave": [
+      "carteira da pessoa idosa",
+      "carteira do idoso",
+      "passagem gratis",
+      "passagem de graca",
+      "viagem interestadual",
+      "onibus interestadual"
+    ],
+    "resposta": "A Carteira da Pessoa Idosa dá direito a uma das 2 vagas gratuitas por veículo no transporte interestadual (viagens entre estados) ou a desconto de pelo menos 50% na passagem. Pode pedir quem tem 60 anos ou mais, renda individual de até 2 salários mínimos e cadastro atualizado no CadÚnico. A emissão é gratuita, pelo site carteiraidoso.cidadania.gov.br com a conta gov.br, ou com ajuda no CRAS. A carteira vale por 2 anos.",
+    "documentos": [
+      "Conta gov.br",
+      "Número do NIS (gerado pelo CadÚnico)",
+      "Cadastro no CadÚnico atualizado"
+    ],
+    "onde": "Site carteiraidoso.cidadania.gov.br ou CRAS; dúvidas pelo Disque Social 121",
+    "fonte": "https://www.gov.br/pt-br/servicos/adquirir-carteira-do-idoso",
+    "verificado_em": "2026-11-07"
+  },
+
+  {
+    "id": 8,
+    "categoria": "Transporte",
+    "titulo": "Andar de graça no ônibus da cidade (mais de 65 anos)",
+    "palavras_chave": [
+      "onibus de graca",
+      "onibus gratis",
+      "transporte gratuito",
+      "passe livre",
+      "gratuidade no onibus",
+      "nao pagar onibus"
+    ],
+    "resposta": "Pelo Estatuto da Pessoa Idosa (art. 39), quem tem mais de 65 anos não paga o transporte coletivo público urbano e semiurbano. Basta mostrar qualquer documento pessoal que prove a idade. Para quem tem entre 60 e 65 anos, a gratuidade depende da lei da sua cidade. A regra não vale para serviços seletivos e especiais.",
+    "documentos": [
+      "Qualquer documento pessoal que mostre a idade (por exemplo, o RG)"
+    ],
+    "onde": "Na hora de embarcar no ônibus da cidade; regras para quem tem de 60 a 65 anos na prefeitura",
+    "fonte": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm",
+    "verificado_em": "2026-11-07"
+  },
+
+  {
+    "id": 9,
+    "categoria": "Direitos",
+    "titulo": "Ter atendimento prioritário (fila preferencial) a partir dos 60 anos",
+    "palavras_chave": [
+      "atendimento prioritario",
+      "fila preferencial",
+      "fila de idoso",
+      "prioridade na fila",
+      "preferencia no atendimento",
+      "fila do banco"
+    ],
+    "resposta": "Pelo Estatuto da Pessoa Idosa (art. 3º), quem tem 60 anos ou mais tem direito a atendimento preferencial, imediato e individualizado em órgãos públicos e em empresas privadas que atendem a população. Entre as pessoas idosas, quem tem mais de 80 anos tem prioridade especial. Se esse direito for negado, você pode denunciar pelo Disque 100.",
+    "documentos": [
+      "Documento com foto que mostre a idade"
+    ],
+    "onde": "Em qualquer órgão público ou empresa privada que atende a população",
+    "fonte": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm",
+    "verificado_em": "2026-11-07"
+  },
+
+  {
+    "id": 10,
+    "categoria": "Direitos",
+    "titulo": "Denunciar violência ou maus-tratos contra pessoa idosa (Disque 100)",
+    "palavras_chave": [
+      "disque 100",
+      "denunciar",
+      "denuncia",
+      "maus tratos",
+      "maus-tratos",
+      "violencia contra idoso",
+      "abandono"
+    ],
+    "resposta": "O Disque 100 recebe, analisa e encaminha denúncias de violação de direitos da pessoa idosa. Qualquer pessoa pode denunciar o que sofreu ou o que sabe que aconteceu com outra pessoa. A ligação é gratuita e funciona 24 horas, todos os dias, inclusive fins de semana e feriados. Também dá para denunciar pelo WhatsApp, pelo Telegram (Direitoshumanosbrasil) ou pelo e-mail ouvidoria@mdh.gov.br.",
+    "documentos": [
+      "Nenhum documento é necessário"
+    ],
+    "onde": "Telefone 100 (gratuito, 24 horas), WhatsApp (61) 99611-0100, Telegram ou e-mail ouvidoria@mdh.gov.br",
+    "fonte": "https://www.gov.br/pt-br/servicos/denunciar-violacao-de-direitos-humanos",
+    "verificado_em": "2026-11-07"
   }
 ]
