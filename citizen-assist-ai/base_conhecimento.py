@@ -1,17 +1,12 @@
-# ---------------------------------------------------------------------------
-# PASSO 2.1 - Imports
-# ---------------------------------------------------------------------------
+# Imports
 import json
-import os
 from orientacao import Orientacao
 
 
-# ---------------------------------------------------------------------------
-# PASSO 2.2 - Função normalizar()
-# ---------------------------------------------------------------------------
+
+# Função normalizar()
 ACENTOS = {"á": "a", "à": "a", "ã": "a", "â": "a", "é": "e", "ê": "e",
            "í": "i", "ó": "o", "õ": "o", "ô": "o", "ú": "u", "ç": "c"}
-
 
 def normalizar(texto):
     # Deixa tudo em minúsculas e tira os espaços das pontas
@@ -29,24 +24,23 @@ def normalizar(texto):
     return " " + " ".join(texto.split()) + " "
 
 
+
 # Recebe uma tupla (pontos, orientacao) e devolve só os pontos.
 # O buscar() usa esta função para ordenar olhando apenas para a nota.
 def pegar_nota(tupla):
     return tupla[0]
 
 
-# ---------------------------------------------------------------------------
-# PASSO 2.3 - Classe e __init__()
-# ---------------------------------------------------------------------------
+
+# Classe e __init__()
 class BaseConhecimento:
     def __init__(self, caminho):
         self.orientacoes = []
         self.caminho = caminho
 
 
-# ---------------------------------------------------------------------------
-# PASSO 2.4 - carregar()
-# ---------------------------------------------------------------------------
+
+# carregar()
     def carregar(self):
         self.orientacoes = []
 
@@ -86,9 +80,8 @@ class BaseConhecimento:
             self.orientacoes = []
 
 
-# ---------------------------------------------------------------------------
-# PASSO 2.5 - categorias()
-# ---------------------------------------------------------------------------
+
+# categorias()
     def categorias(self):
         lista_categoria = []
         for orientacao in self.orientacoes:
@@ -98,9 +91,8 @@ class BaseConhecimento:
         return lista_categoria
 
 
-# ---------------------------------------------------------------------------
-# PASSO 2.6 - por_categoria()
-# ---------------------------------------------------------------------------
+
+# por_categoria()
     def por_categoria(self, categoria_recebida):
         resultado = []
         for orientacao in self.orientacoes:
@@ -110,9 +102,8 @@ class BaseConhecimento:
         return resultado
 
 
-# ---------------------------------------------------------------------------
-# PASSO 2.7 - pontuar()
-# ---------------------------------------------------------------------------
+
+# pontuar()
     def pontuar(self, pergunta, orientacao):
         pontos = 0
         pergunta_normalizada = normalizar(pergunta)
@@ -131,9 +122,8 @@ class BaseConhecimento:
         return pontos
 
 
-# ---------------------------------------------------------------------------
+
 # PASSO 2.8 - buscar()
-# ---------------------------------------------------------------------------
     def buscar(self, pergunta):
         resultados = []
 
@@ -144,43 +134,3 @@ class BaseConhecimento:
 
         resultados.sort(key=pegar_nota, reverse=True)
         return resultados
-
-
-# ---------------------------------------------------------------------------
-# PASSO 2.9 - Testes neste arquivo
-# ---------------------------------------------------------------------------
-if __name__ == "__main__":
-    base = BaseConhecimento("data/base_conhecimento.json")
-    base.carregar()
-    print("Orientações:", len(base.orientacoes))
-    print("Categorias:", base.categorias())
-    print("Em Saúde:", len(base.por_categoria("Saúde")))
-
-    # Cada item do buscar() é uma tupla, separada aqui em pontos e orientacao.
-    for pergunta in ["cartão do SUS", "bpc", "pizza", "cita"]:
-        print("\nPergunta:", pergunta)
-        for pontos, orientacao in base.buscar(pergunta):
-            print(f"  {pontos} pontos - {orientacao.titulo}")
-
-    print("\nJSON ausente:")
-    base_ausente = BaseConhecimento("data/nao_existe.json")
-    base_ausente.carregar()
-    print("Orientações:", len(base_ausente.orientacoes))
-
-    # Cada defeito é testado em um arquivo temporário, sem mexer no JSON original.
-    caminho_teste = "data/teste_defeito.json"
-    defeitos = [
-        ("JSON corrompido", '[{"id": 1'),
-        ("Campo faltando", '[{"id": 1}]'),
-        ("Formato errado", "[1]"),
-    ]
-
-    for nome, conteudo in defeitos:
-        print(f"\n{nome}:")
-        with open(caminho_teste, "w", encoding="utf-8") as arquivo:
-            arquivo.write(conteudo)
-
-        base_defeito = BaseConhecimento(caminho_teste)
-        base_defeito.carregar()
-        print("Orientações:", len(base_defeito.orientacoes))
-        os.remove(caminho_teste)

@@ -1,0 +1,13 @@
+[
+    {
+        "data": "2026-11-08 17:33",
+        "origem": "pergunta",
+        "pergunta": "o que é bpc?",
+        "id_orientacao": 2,
+        "encontrou": true,
+        "ajudou": false,
+        "tentativas": 1,
+        "tempo_segundos": 54.6,
+        "nota_facilidade": null
+    }
+]
