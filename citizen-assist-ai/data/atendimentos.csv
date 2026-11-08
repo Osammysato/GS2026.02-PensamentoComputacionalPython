@@ -1,0 +1,13 @@
+data,origem,pergunta,id_orientacao,encontrou,ajudou,tentativas,tempo_segundos,nota_facilidade
+2026-11-08 18:17,pergunta,a partir de quantos anos pode andar de ônibus em são paulo de graça?,8,True,True,1,85.1,4
+2026-11-08 18:24,pergunta,onde pego rémedio para pressão?,,False,False,1,46.2,2
+2026-11-08 18:28,pergunta,onde pego remedios para pressão?,5,True,True,1,27.2,4
+2026-11-08 18:29,categoria,Ter atendimento prioritário (fila preferencial) a partir dos 60 anos,9,True,True,1,15.9,5
+2026-11-08 18:32,pergunta,2,,False,False,2,27.8,3
+2026-11-08 18:32,categoria,Fazer a prova de vida do INSS (aposentados e pensionistas),3,True,True,1,10.5,3
+2026-11-08 18:37,pergunta,com quantos nos posso entrar na fila de idoso?,9,True,True,4,233.7,1
+2026-11-08 18:39,pergunta,como fazer a prova de vida do inss?,3,True,True,1,23.4,4
+2026-11-08 18:40,pergunta,como funciona o beneficio do salario minimo para idoso?,2,True,True,1,24.7,5
+2026-11-08 18:41,pergunta,onde tomar vacina da gripe?,6,True,True,1,10.4,5
+2026-11-08 18:42,categoria,Emitir a Carteira da Pessoa Idosa para viajar de graça entre estados,7,True,True,1,8.0,5
+2026-11-08 18:43,categoria,Denunciar violência ou maus-tratos contra pessoa idosa (Disque 100),10,True,True,1,6.9,5
