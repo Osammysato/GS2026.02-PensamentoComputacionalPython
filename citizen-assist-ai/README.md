@@ -227,6 +227,14 @@ Incluímos duas palavras-chave na orientação 5: `"remedios para pressao"` e `"
 
 ---
 
+## ⚠️ Limitações
+
+- A busca é por palavras-chave: se a pessoa usa palavras que não estão na base, a orientação não é encontrada (exemplo do teste: "rémedio para pressão" só passou a ser encontrada depois de incluirmos novas palavras-chave).
+- A comparação é por palavra inteira, então variações como plural ("remedio" x "remedios") precisam ser cadastradas como palavras-chave separadas.
+- O assistente só responde com o que está na base (10 orientações): dúvidas fora dela retornam "Não encontrei".
+
+---
+
 ## 🎥 Vídeo técnico
 
 `PREENCHER — link do YouTube (não listado)`
