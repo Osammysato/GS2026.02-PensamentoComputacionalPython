@@ -98,6 +98,8 @@
       "farmacia popular",
       "remedio de graca",
       "remedio gratis",
+      "remedios para pressao",
+      "pego remedio",
       "medicamento gratuito",
       "aqui tem farmacia popular",
       "fralda geriatrica"
@@ -111,6 +113,7 @@
     "fonte": "https://www.gov.br/saude/pt-br/assuntos/farmaciapopular",
     "verificado_em": "2026-11-07"
   },
+
   {
     "id": 6,
     "categoria": "Saúde",
@@ -186,7 +189,12 @@
       "fila de idoso",
       "prioridade na fila",
       "preferencia no atendimento",
-      "fila do banco"
+      "fila do banco",
+      "Tenho preferencia na fila",
+      "com quatos anos posso ir em filas prioritarias",
+      "idoso tem preferencia nas filas",
+      "preferencia",
+      "preferencial"
     ],
     "resposta": "Pelo Estatuto da Pessoa Idosa (art. 3º), quem tem 60 anos ou mais tem direito a atendimento preferencial, imediato e individualizado em órgãos públicos e em empresas privadas que atendem a população. Entre as pessoas idosas, quem tem mais de 80 anos tem prioridade especial. Se esse direito for negado, você pode denunciar pelo Disque 100.",
     "documentos": [
