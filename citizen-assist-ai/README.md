@@ -1,5 +1,4 @@
-# GS2026.02-PensamentoComputacionalPython
-# Citizen Assist AI — Assistente Digital de Orientação ao Cidadão
+# VovóSabeAI — Citizen Assist AI para pessoas idosas
 
 Global Solution 2026.2 (desafio CitizenTech) — **Pensamento Computacional e Automação com Python (PCP)** — FIAP
 
@@ -11,8 +10,8 @@ Assistente executado no **terminal**, em **Python puro** (só biblioteca padrão
 
 | Nome | RM |
 |---|---|
-| `PREENCHER` | `RMxxxxxx` |
-| `PREENCHER` | `RMxxxxxx` |
+| Sammy Sato | RM 569182 |
+| Gabriel Pedro de Souza | RM 571995 |
 
 ---
 
@@ -22,7 +21,7 @@ Assistente executado no **terminal**, em **Python puro** (só biblioteca padrão
 
 **Problema:** muitas pessoas idosas perdem tempo tentando descobrir onde fazer o Cartão SUS, como conseguir a gratuidade no transporte ou quais documentos levar para um serviço público. A informação existe, mas está espalhada, em linguagem técnica e, muitas vezes, misturada com páginas que parecem oficiais e não são.
 
-**Solução:** o Citizen Assist AI reúne orientações verificadas em uma **base de conhecimento** e, a partir de uma pergunta em texto livre ou da navegação por categorias, informa:
+**Solução:** o VovóSabeAI reúne orientações verificadas em uma **base de conhecimento** e, a partir de uma pergunta em texto livre ou da navegação por categorias, informa:
 
 1. se existe uma orientação para a dúvida;
 2. com que nível de confiança ela foi encontrada (ALTA / MÉDIA);
@@ -45,13 +44,23 @@ Assistente executado no **terminal**, em **Python puro** (só biblioteca padrão
 Pré-requisito: **Python 3** instalado. Não há bibliotecas externas (nada de `pip install`).
 
 ```bash
-git clone PREENCHER_LINK_DO_REPOSITORIO
-cd citizen-assist-ai
+git clone https://github.com/Osammysato/GS2026.02-PensamentoComputacionalPython.git
+cd GS2026.02-PensamentoComputacionalPython/citizen-assist-ai
 python main.py
 ```
 
 > No macOS/Linux, use `python3 main.py` caso `python` não esteja disponível.
-> O programa deve ser executado **de dentro da pasta do projeto**, porque os caminhos `data/...` são relativos a ela.
+> O `main.py` muda a pasta de trabalho para a pasta do projeto (`os.chdir`), então os caminhos `data/...` funcionam mesmo se o programa for chamado de outra pasta.
+
+### Menu principal
+
+```
+1 - Digitar minha dúvida        → perguntar()
+2 - Procurar por categorias     → navegar()
+3 - Ver indicadores             → indicadores()
+4 - Exportar atendimentos (CSV) → exportar_csv()
+0 - Sair                        → pede a nota de facilidade (1 a 5)
+```
 
 ---
 
@@ -93,9 +102,11 @@ Uso no `main.py`:
 ```python
 base = BaseConhecimento("data/base_conhecimento.json")
 base.carregar()                                   # lê o JSON e cria os objetos Orientacao
-assistente = Assistente("Citizen Assist AI", base)
+assistente = Assistente("VovóSabeAI", base)       # o Assistente TEM uma BaseConhecimento
 assistente.perguntar()                            # usa base.buscar() e orientacao.exibir()
 ```
+
+Além dos métodos mínimos, o `Assistente` tem métodos de apoio: `ler_opcao()` e `ler_sim_nao()` (validação de entradas), `tem_dado_pessoal()` (bloqueio de CPF/telefone/e-mail), `confianca()` (ALTA/MÉDIA), `carregar_historico()`, `salvar_historico()` e `pedir_nota()`.
 
 ---
 
@@ -119,9 +130,9 @@ Pergunta, palavras-chave e título são comparados **sem acentos, sem pontuaçã
 
 `buscar()` devolve uma **lista de tuplas `(pontos, orientacao)`**, ordenada da maior para a menor pontuação. O assistente mostra a melhor orientação e até **duas alternativas**.
 
-**Exemplo:** em *"Como faço o cartão do SUS?"*, a orientação do Cartão SUS recebe +3 por `cartao do sus`, +3 por `sus` e +1 porque "cartao" está no título: **7 pontos → confiança ALTA**.
+**Exemplo:** em *"Como faço o cartão do SUS?"*, a orientação 1 (Cartão SUS) recebe +3 por `cartao do sus`, +3 por `sus` e +1 porque "cartao" está no título: **7 pontos → confiança ALTA**.
 
-**Ajustes de pesos/limites:** `PREENCHER — "nenhum, usamos os pesos do enunciado" ou descrever o ajuste e o motivo`.
+**Ajustes de pesos/limites:** nenhum. Usamos os pesos e limites do enunciado. As alternativas só aparecem se também tiverem 3 pontos ou mais.
 
 ---
 
@@ -138,7 +149,9 @@ Pergunta, palavras-chave e título são comparados **sem acentos, sem pontuaçã
 
 ## 📊 Histórico, indicadores e CSV
 
-Cada atendimento é salvo em `data/historico.json` como um dicionário com: `data`, `origem` (pergunta ou categoria), `pergunta`, `id` da orientação, `encontrou`, `ajudou`, `tentativas` e `tempo` em segundos (medido com `time.time()`).
+Cada atendimento é salvo em `data/historico.json` como um dicionário com: `data`, `origem` (pergunta ou categoria), `pergunta`, `id_orientacao`, `encontrou`, `ajudou`, `tentativas`, `tempo_segundos` (medido com `time.time()`) e `nota_facilidade` (preenchida quando a pessoa sai). O histórico é salvo a cada atendimento e carregado ao abrir o programa, então os testes de várias sessões se acumulam.
+
+**Dúvida sem solução:** consideramos tanto a pergunta que não foi encontrada quanto a orientação que foi exibida mas não ajudou (resposta "n").
 
 Indicadores calculados por `indicadores()`:
 - Resposta encontrada (%)
@@ -154,7 +167,7 @@ Os atendimentos são exportados para `data/atendimentos.csv` com `csv.DictWriter
 
 ## 🔗 Integrações com outras disciplinas
 
-`PREENCHER — "Não houve integração com outras disciplinas." ou descrever a integração (ex.: COA, DSA, IA) e como ela se conecta à busca por pontuação.`
+Não houve integração com outras disciplinas. Toda a "inteligência" do assistente é a busca por pontuação descrita acima, em Python puro.
 
 ---
 
@@ -162,46 +175,55 @@ Os atendimentos são exportados para `data/atendimentos.csv` com `csv.DictWriter
 
 Todas as orientações da base usam fonte oficial e têm a data em que a equipe conferiu a informação (campo `verificado_em`).
 
-| Orientação | Fonte oficial | Verificado em |
-|---|---|---|
-| `PREENCHER (título)` | `PREENCHER (link)` | `AAAA-MM-DD` |
-| `PREENCHER` | `PREENCHER` | `AAAA-MM-DD` |
-| `...` (uma linha por orientação do JSON) | | |
+| # | Orientação | Categoria | Fonte oficial | Verificado em |
+|---|---|---|---|---|
+| 1 | Cartão SUS (Cartão Nacional de Saúde) | Saúde | [gov.br/saude](https://www.gov.br/saude/pt-br/assuntos/noticias/2025/setembro/ministerio-da-saude-comeca-a-emitir-cartao-sus-com-base-no-cpf) | 2026-11-07 |
+| 2 | BPC/LOAS | Benefícios | [gov.br — Benefício assistencial ao idoso](https://www.gov.br/pt-br/servicos/solicitar-beneficio-assistencial-ao-idoso) | 2026-11-07 |
+| 3 | Prova de vida do INSS | Benefícios | [INSS — FAQ Prova de Vida](https://www.gov.br/inss/pt-br/noticias/prova-de-vida/FAQProvadeVida.pdf) | 2026-11-07 |
+| 4 | Cadastro Único (CadÚnico) | Benefícios | [gov.br — Cadastro Único](https://www.gov.br/pt-br/servicos/inscrever-se-no-cadastro-unico-para-programas-sociais-do-governo-federal) | 2026-11-07 |
+| 5 | Farmácia Popular | Saúde | [gov.br — Farmácia Popular](https://www.gov.br/saude/pt-br/assuntos/farmaciapopular) | 2026-11-07 |
+| 6 | Vacina da gripe (influenza) | Saúde | [Ministério da Saúde — Campanha contra a influenza](https://www.gov.br/saude/pt-br/assuntos/noticias/2026/marco/dia-d-campanha-nacional-de-vacinacao-contra-a-influenza-comeca-neste-sabado-28) | 2026-11-07 |
+| 7 | Carteira da Pessoa Idosa | Transporte | [gov.br — Carteira da Pessoa Idosa](https://www.gov.br/pt-br/servicos/adquirir-carteira-do-idoso) | 2026-11-07 |
+| 8 | Ônibus de graça (65+) | Transporte | [Estatuto da Pessoa Idosa — Lei 10.741/2003](https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm) | 2026-11-07 |
+| 9 | Atendimento prioritário (60+) | Direitos | [Estatuto da Pessoa Idosa — Lei 10.741/2003](https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm) | 2026-11-07 |
+| 10 | Denúncia de violência (Disque 100) | Direitos | [gov.br — Denunciar violação de direitos humanos](https://www.gov.br/pt-br/servicos/denunciar-violacao-de-direitos-humanos) | 2026-11-07 |
 
 ---
 
 ## 🧪 Teste com usuários
 
-Teste realizado com **`PREENCHER` pessoas** de fora da equipe, somando **`PREENCHER` atendimentos**. Nenhum nome ou dado pessoal dos participantes foi registrado.
+Teste realizado em 08/11/2026 com **3 pessoas** de fora da equipe, somando **12 atendimentos**: 8 por pergunta digitada e 4 pela navegação por categorias. Nenhum nome ou dado pessoal dos participantes foi registrado. Os registros estão em `data/historico.json` e `data/atendimentos.csv`.
 
 ### Indicadores obtidos
 
 | Indicador | Resultado |
 |---|---|
-| Resposta encontrada (%) | `PREENCHER` |
-| Taxa de acerto: ajudou (%) | `PREENCHER` |
-| Tempo médio para encontrar | `PREENCHER` s |
-| Tentativas por atendimento | `PREENCHER` |
-| Facilidade de uso (1 a 5) | `PREENCHER` |
+| Resposta encontrada (%) | 83,3% (10 de 12) |
+| Taxa de acerto: ajudou (%) | 83,3% (10 de 12) |
+| Tempo médio para encontrar | 44,6 s |
+| Tentativas por atendimento | 1,3 |
+| Facilidade de uso (1 a 5) | 3,8 |
 
 ### Dúvidas sem solução
 
-- `PREENCHER (copiar da lista gerada pelos indicadores)`
+- **"onde pego rémedio para pressão?"**: não foi encontrada (1 ponto, abaixo do mínimo de 3). Corrigida com a melhoria abaixo.
+- **"2"**: a pessoa digitou o número de uma opção do menu na tela de dúvida, achando que estava escolhendo "Procurar por categorias". Não é uma dúvida da base: mostra que a diferença entre a tela do menu e a tela de pergunta não ficou clara para todos.
+
+### Observações do teste
+
+- Na pergunta **"com quantos nos posso entrar na fila de idoso?"**, a pessoa precisou de **4 tentativas** (233,7 s) até chegar à orientação 9 (atendimento prioritário), e deu nota de facilidade 1. Na última tentativa a palavra-chave `fila de idoso` foi encontrada (4 pontos, confiança MÉDIA).
+- Pela **navegação por categorias**, os 4 atendimentos encontraram a orientação na primeira escolha, em 6,9 s a 15,9 s.
 
 ### Melhoria feita a partir do teste
 
-`PREENCHER — ex.: "A pergunta 'ônibus de graça' não era encontrada; incluímos a palavra-chave 'onibus de graca' na orientação de gratuidade no transporte e ela passou a ser encontrada com confiança MÉDIA."`
+A pergunta **"onde pego rémedio para pressão?"** somava só **1 ponto** (a palavra "remedio" no título da orientação 5), e o assistente respondia "Não encontrei". O motivo: nenhuma palavra-chave da orientação 5 (Farmácia Popular) aparecia do jeito que a pessoa perguntou.
 
----
+Incluímos duas palavras-chave na orientação 5: `"remedios para pressao"` e `"pego remedio"`. Depois disso:
 
-## ⚠️ Limitações
-
-- A busca é **por regras** (palavras-chave), não entende o sentido da frase: perguntas com palavras que não estão na base não são encontradas.
-- **Erros de digitação** e sinônimos não cadastrados reduzem a pontuação.
-- O assistente só responde com o que está na base: tem cobertura limitada às orientações cadastradas.
-- As informações podem **ficar desatualizadas**; por isso cada orientação mostra a data de verificação e o link da fonte oficial.
-- Funciona apenas no **terminal**, o que pode ser uma barreira para parte do público idoso.
-- O bloqueio de dados pessoais é por regra (8+ dígitos ou `@`): pode recusar perguntas legítimas com números longos e não detecta, por exemplo, um nome digitado.
+| Pergunta | Antes | Depois |
+|---|---|---|
+| "onde pego rémedio para pressão?" | 1 ponto — Não encontrei | **4 pontos — confiança MÉDIA** (+3 `pego remedio`, +1 "remedio" no título) |
+| "onde pego remedios para pressão?" | 1 ponto — Não encontrei | **3 pontos — confiança MÉDIA** (+3 `remedios para pressao`) |
 
 ---
 
