@@ -237,7 +237,7 @@ Incluímos duas palavras-chave na orientação 5: `"remedios para pressao"` e `"
 
 ## 🎥 Vídeo técnico
 
-`[PREENCHER — link do YouTube (não listado)](https://youtu.be/Cl76dNuO4dw)`
+`https://youtu.be/Cl76dNuO4dw?si=Xa-vMg7d52UJ94gB`
 
 ---
 
